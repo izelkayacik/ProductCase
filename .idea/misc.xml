@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/iztuka/AndroidStudioProjects/ProductsApp/app/src/main/res/drawable/basket_icon.xml" value="0.2546875" />
+        <entry key="..\:/Users/iztuka/AndroidStudioProjects/ProductsApp/app/src/main/res/drawable/home_icon.xml" value="0.2546875" />
+        <entry key="..\:/Users/iztuka/AndroidStudioProjects/ProductsApp/app/src/main/res/drawable/log_in_btn_bg.xml" value="0.2703125" />
+        <entry key="..\:/Users/iztuka/AndroidStudioProjects/ProductsApp/app/src/main/res/drawable/login_btn_bg.xml" value="0.2703125" />
+        <entry key="..\:/Users/iztuka/AndroidStudioProjects/ProductsApp/app/src/main/res/layout/activity_categories_list.xml" value="0.19610507246376813" />
+        <entry key="..\:/Users/iztuka/AndroidStudioProjects/ProductsApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/iztuka/AndroidStudioProjects/ProductsApp/app/src/main/res/layout/activity_product_list.xml" value="0.17572463768115942" />
+        <entry key="..\:/Users/iztuka/AndroidStudioProjects/ProductsApp/app/src/main/res/layout/bottom_bar.xml" value="0.264" />
+        <entry key="..\:/Users/iztuka/AndroidStudioProjects/ProductsApp/app/src/main/res/layout/categories_item_view.xml" value="0.4" />
+        <entry key="..\:/Users/iztuka/AndroidStudioProjects/ProductsApp/app/src/main/res/layout/fragment_home.xml" value="0.19610507246376813" />
+        <entry key="..\:/Users/iztuka/AndroidStudioProjects/ProductsApp/app/src/main/res/layout/log_in_screen.xml" value="0.23550724637681159" />
+        <entry key="..\:/Users/iztuka/AndroidStudioProjects/ProductsApp/app/src/main/res/layout/product_item_view.xml" value="0.23550724637681159" />
+        <entry key="..\:/Users/iztuka/AndroidStudioProjects/ProductsApp/app/src/main/res/layout/search_view.xml" value="0.23550724637681159" />
+        <entry key="..\:/Users/iztuka/AndroidStudioProjects/ProductsApp/app/src/main/res/menu/bottom_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/iztuka/AndroidStudioProjects/ProductsApp/app/src/main/res/menu/nav_menu.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
