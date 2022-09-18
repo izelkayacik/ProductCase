@@ -9,5 +9,19 @@
         android:id="@+id/homeFragment"
         android:name="com.izelkayacik.productsapp.fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/actionHomeFragmentToProductFragment"
+            app:destination="@id/productFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.izelkayacik.productsapp.fragments.ProductFragment"
+        android:label="fragment_product"
+        tools:layout="@layout/fragment_product" >
+        <argument
+            android:name="categoriId"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 </navigation>

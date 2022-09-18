@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.izelkayacik.productsapp.R
 import com.izelkayacik.productsapp.adapter.CategoriesItemAdapter
+import com.izelkayacik.productsapp.adapter.DetailClickEvent
 import com.izelkayacik.productsapp.model.Categories
 import com.izelkayacik.productsapp.model.CategoriesDetail
 import com.izelkayacik.productsapp.service.Retrofit
@@ -42,8 +44,16 @@ class HomeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        rvCategories = view.findViewById<RecyclerView>(R.id.rvCategories)
+
+        rvCategories = view.findViewById<RecyclerView>(R.id.rvCategoriesC)
         loadData()
+
+
+        view.setOnClickListener {
+            findNavController().navigate(R.id.actionHomeFragmentToProductFragment)
+        }
+
+
 
         return view
 
@@ -64,7 +74,17 @@ class HomeFragment : Fragment() {
                         categoriesDetailModels = it!!
 
                         categoriesItemAdapter =
-                            CategoriesItemAdapter(categoriesDetailModels!!, MainActivity.ctx)
+                            CategoriesItemAdapter(
+                                categoriesDetailModels!!,
+                                MainActivity.ctx,
+                                object : DetailClickEvent {
+                                override fun click(categoriId: String) {
+                                    val direction = HomeFragmentDirections
+                                        .actionHomeFragmentToProductFragment(categoriId)
+                                    findNavController().navigate(direction)
+                                }
+
+                            })
                         val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(
                             MainActivity.ctx, 2
                         )
@@ -85,14 +105,14 @@ class HomeFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
     }
 
-    companion object {
-
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
-
-    }
+//    companion object {
+//
+//        fun newInstance(param1: String, param2: String) =
+//            HomeFragment().apply {
+//                arguments = Bundle().apply {
+//
+//                }
+//            }
+//
+//    }
 }

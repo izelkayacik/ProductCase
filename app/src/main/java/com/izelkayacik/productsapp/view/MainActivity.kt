@@ -10,8 +10,10 @@ import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.izelkayacik.productsapp.R
+import com.izelkayacik.productsapp.adapter.CategoriesItemAdapter
+import com.izelkayacik.productsapp.model.CategoriesDetail
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
 
     lateinit var bottomNavigationMenuView : BottomNavigationView
 
@@ -39,4 +41,6 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return item.onNavDestinationSelected(findNavController(R.id.bottom_navigation)) || super.onOptionsItemSelected(item)
     }
+
+
 }

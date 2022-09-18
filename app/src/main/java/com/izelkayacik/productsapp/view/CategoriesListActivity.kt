@@ -3,12 +3,10 @@ package com.izelkayacik.productsapp.view
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.izelkayacik.productsapp.R
 import com.izelkayacik.productsapp.adapter.CategoriesItemAdapter
 import com.izelkayacik.productsapp.model.Categories
-import com.izelkayacik.productsapp.model.CategoriesDetail
 import com.izelkayacik.productsapp.service.Retrofit
 import retrofit2.Call
 import retrofit2.Callback
@@ -27,7 +25,7 @@ class CategoriesListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_categories_list)
         ctx = this;
 
-        rvCategories = findViewById<RecyclerView>(R.id.rvCategories)
+        rvCategories = findViewById<RecyclerView>(R.id.rvCategoriesC)
 
         loadData()
     }
