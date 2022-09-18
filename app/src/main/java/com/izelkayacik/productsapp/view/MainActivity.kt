@@ -10,8 +10,6 @@ import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.izelkayacik.productsapp.R
-import com.izelkayacik.productsapp.adapter.CategoriesItemAdapter
-import com.izelkayacik.productsapp.model.CategoriesDetail
 
 class MainActivity : AppCompatActivity(){
 

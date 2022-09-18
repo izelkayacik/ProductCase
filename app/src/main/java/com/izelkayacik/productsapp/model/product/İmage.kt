@@ -1,9 +1,9 @@
-package com.izelkayacik.productsapp.model
+package com.izelkayacik.productsapp.model.product
 
 
 import com.google.gson.annotations.SerializedName
 
-data class FeaturedImage(
+data class İmage(
     @SerializedName("n")
     val n: String,
     @SerializedName("t")

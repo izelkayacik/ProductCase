@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.izelkayacik.productsapp.R
 import com.izelkayacik.productsapp.adapter.CategoriesItemAdapter
-import com.izelkayacik.productsapp.model.Categories
+import com.izelkayacik.productsapp.model.categories.Categories
 import com.izelkayacik.productsapp.service.Retrofit
 import retrofit2.Call
 import retrofit2.Callback

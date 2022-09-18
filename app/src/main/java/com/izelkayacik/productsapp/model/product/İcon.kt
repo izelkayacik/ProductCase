@@ -1,4 +1,4 @@
-package com.izelkayacik.productsapp.model
+package com.izelkayacik.productsapp.model.product
 
 
 import com.google.gson.annotations.SerializedName

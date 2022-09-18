@@ -12,8 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.izelkayacik.productsapp.R
 import com.izelkayacik.productsapp.adapter.CategoriesItemAdapter
 import com.izelkayacik.productsapp.adapter.DetailClickEvent
-import com.izelkayacik.productsapp.model.Categories
-import com.izelkayacik.productsapp.model.CategoriesDetail
+import com.izelkayacik.productsapp.model.categories.Categories
+import com.izelkayacik.productsapp.model.categories.CategoriesDetail
 import com.izelkayacik.productsapp.service.Retrofit
 import com.izelkayacik.productsapp.view.MainActivity
 import retrofit2.Call
@@ -44,7 +44,6 @@ class HomeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-
         rvCategories = view.findViewById<RecyclerView>(R.id.rvCategoriesC)
         loadData()
 
@@ -53,21 +52,17 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.actionHomeFragmentToProductFragment)
         }
 
-
-
         return view
 
     }
 
     private fun loadData() {
-        Retrofit.getClient().getData().enqueue(object : Callback<Categories>{
+        Retrofit.getClient().getData().enqueue(object : Callback<Categories> {
             override fun onResponse(
                 call: Call<Categories>,
                 response: Response<Categories>
             ) {
                 if (response.isSuccessful) {
-
-                    //println(response.body())
 
                     response.body()?.data.let {
 
@@ -78,13 +73,13 @@ class HomeFragment : Fragment() {
                                 categoriesDetailModels!!,
                                 MainActivity.ctx,
                                 object : DetailClickEvent {
-                                override fun click(categoriId: String) {
-                                    val direction = HomeFragmentDirections
-                                        .actionHomeFragmentToProductFragment(categoriId)
-                                    findNavController().navigate(direction)
-                                }
+                                    override fun click(id: String) {
+                                        val direction = HomeFragmentDirections
+                                            .actionHomeFragmentToProductFragment(id)
+                                        findNavController().navigate(direction)
+                                    }
 
-                            })
+                                })
                         val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(
                             MainActivity.ctx, 2
                         )
@@ -105,14 +100,4 @@ class HomeFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
     }
 
-//    companion object {
-//
-//        fun newInstance(param1: String, param2: String) =
-//            HomeFragment().apply {
-//                arguments = Bundle().apply {
-//
-//                }
-//            }
-//
-//    }
 }
