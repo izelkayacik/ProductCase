@@ -6,10 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.izelkayacik.productsapp.R
-import com.izelkayacik.productsapp.adapter.ProductClickEvent
+import com.izelkayacik.productsapp.adapter.listeners.ProductClickEvent
 import com.izelkayacik.productsapp.adapter.ProductItemAdapter
 import com.izelkayacik.productsapp.model.product.Data
 import com.izelkayacik.productsapp.model.product.Product
@@ -21,11 +22,9 @@ import retrofit2.Response
 
 
 class ProductFragment : Fragment() {
-    private var param1: String? = null
-    private var param2: String? = null
 
     lateinit var rvProducts: RecyclerView
-    private lateinit var dataModels: List<Data>
+    private  var dataModels: List<Data>? = null
     private lateinit var productItemAdapter: ProductItemAdapter
 
     override fun onCreateView(
@@ -37,16 +36,16 @@ class ProductFragment : Fragment() {
         val categoriId = ProductFragmentArgs.fromBundle(requireArguments()).categoriId
 
         rvProducts = view.findViewById<RecyclerView>(R.id.rvProductsC)
-        loadData(categoriId!!, "Price")
+        loadData(categoriId, "Price")
 
         view.setOnClickListener {
-            //findNavController().navigate(R.id.actionHomeFragmentToProductFragment)
+            findNavController().navigate(R.id.actionProductToProductDetail)
         }
         return view
 
     }
 
-    private fun loadData(categoriId: String, sort: String) {
+    private fun loadData(categoriId: String?, sort: String?) {
 
         Retrofit.getClient().getProduct(categoriId, sort)?.enqueue(object : Callback<Product?> {
             override fun onResponse(call: Call<Product?>, response: Response<Product?>) {
@@ -54,15 +53,18 @@ class ProductFragment : Fragment() {
 
                     response.body()?.data.let {
 
-                        dataModels = it!!
+                        dataModels = it
 
                         productItemAdapter =
-                            ProductItemAdapter(dataModels!!,
+                            ProductItemAdapter(dataModels,
                                 MainActivity.ctx,
-
                                 object : ProductClickEvent {
-                                    override fun click(id: String, sort: String) {
+                                    override fun click(id: String) {
+                                        val direction =
+                                            ProductFragmentDirections
+                                                .actionProductToProductDetail(id)
 
+                                        findNavController().navigate(direction)
                                     }
                                 })
 

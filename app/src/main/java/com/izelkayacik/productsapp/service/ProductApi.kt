@@ -2,6 +2,7 @@ package com.izelkayacik.productsapp.service
 
 import com.izelkayacik.productsapp.model.categories.Categories
 import com.izelkayacik.productsapp.model.product.Product
+import com.izelkayacik.productsapp.model.productdetail.ProductDetail
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers
@@ -9,7 +10,7 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ProductApi {
-    //https://api.shopiroller.com/v2.0/products/advanced-filtered?categoryId=61b1f1c8a82ec0dd1c56f5ef&sort=Price
+
     //https://api.shopiroller.com/v2.0/categories
     @Headers(
         "Accept: application/json",
@@ -30,10 +31,9 @@ interface ProductApi {
     )
     @GET("products/advanced-filtered")
     fun getProduct(
-        @Query("categoryId") categoryId: String,
-        @Query("sort") sort: String
+        @Query("categoryId") categoryId: String?,
+        @Query("sort") sort: String?
     ): Call<Product?>?
-
 
     //https://api.shopiroller.com/v2.0/products/61c3bdc8315b11d58d79f585
 
@@ -45,8 +45,6 @@ interface ProductApi {
     )
     @GET("products/{id}")
     fun getProductDetail(
-        @Path("id") id: String,
-    ): Call<Product?>?
-
-
+        @Path("id") id: String?
+    ): Call<ProductDetail?>?
 }

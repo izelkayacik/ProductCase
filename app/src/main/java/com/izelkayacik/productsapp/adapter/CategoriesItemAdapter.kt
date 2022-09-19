@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.card.MaterialCardView
 import com.izelkayacik.productsapp.R
+import com.izelkayacik.productsapp.adapter.listeners.DetailClickEvent
 import com.izelkayacik.productsapp.model.categories.CategoriesDetail
 
 class CategoriesItemAdapter(
@@ -22,7 +23,8 @@ class CategoriesItemAdapter(
         val categoriesName: TextView = view.findViewById(R.id.txtCategoriesName)
         val categoriesImage: AppCompatImageView = view.findViewById(R.id.imgCategories)
         val itemLayout: MaterialCardView = view.findViewById(R.id.itemLayout)
-
+        val txtPrice: TextView = view.findViewById(R.id.txtPrice)
+        val txtDiscountPrice: TextView = view.findViewById(R.id.txtDiscountPrice)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowHolder {
@@ -40,15 +42,16 @@ class CategoriesItemAdapter(
         currentCategories?.name.let {
             holder.categoriesName.text = it
         }
+
+        holder.txtPrice.visibility = View.GONE
+        holder.txtDiscountPrice.visibility = View.GONE
+
         holder.itemLayout.setOnClickListener {
             currentCategories?.let { item -> detailClickEvent.click(item.categoryId) }
         }
-
     }
-
     override fun getItemCount(): Int {
         return categoriesList.size
     }
-
 }
 

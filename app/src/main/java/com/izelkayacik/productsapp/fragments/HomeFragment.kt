@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.izelkayacik.productsapp.R
 import com.izelkayacik.productsapp.adapter.CategoriesItemAdapter
-import com.izelkayacik.productsapp.adapter.DetailClickEvent
+import com.izelkayacik.productsapp.adapter.listeners.DetailClickEvent
 import com.izelkayacik.productsapp.model.categories.Categories
 import com.izelkayacik.productsapp.model.categories.CategoriesDetail
 import com.izelkayacik.productsapp.service.Retrofit

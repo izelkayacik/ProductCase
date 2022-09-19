@@ -11,9 +11,10 @@ import com.bumptech.glide.Glide
 import com.google.android.material.card.MaterialCardView
 import com.izelkayacik.productsapp.R
 import com.izelkayacik.productsapp.model.product.Data
+import com.izelkayacik.productsapp.adapter.listeners.ProductClickEvent
 
 class ProductItemAdapter(
-    private val productList: List<Data>,
+    private val productList: List<Data>?,
     private val ctx: Context,
     private val productClickEvent: ProductClickEvent
 ) : RecyclerView.Adapter<ProductItemAdapter.RowHolder>() {
@@ -24,7 +25,6 @@ class ProductItemAdapter(
         val productPrice: TextView = view.findViewById(R.id.txtPrice)
         val productDiscountPrice: TextView = view.findViewById(R.id.txtDiscountPrice)
         val itemLayout: MaterialCardView = view.findViewById(R.id.itemLayout)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowHolder {
@@ -32,36 +32,38 @@ class ProductItemAdapter(
             .inflate(R.layout.categories_item_view, parent, false)
 
         return RowHolder(view)
-
     }
 
     override fun onBindViewHolder(holder: RowHolder, position: Int) {
-
-        val currentProduct: Data? = productList[position]
+        val currentProduct: Data? = productList?.get(position)
 
         Glide.with(ctx).load(currentProduct?.images?.get(0)?.t).into(holder.productImage)
+
+//        val matrix = ColorMatrix()
+//        matrix.setSaturation(0f)
+//
+//        val filter = ColorMatrixColorFilter(matrix)
+//        holder.productImage.setColorFilter(filter)
 
         currentProduct?.title.let {
             holder.categoriesName.text = it
         }
-
         currentProduct?.price.let {
             holder.productPrice.text = it.toString()
         }
-
-        currentProduct?.shippingPrice.let {
-            holder.productDiscountPrice.text = it.toString()
-        }
-
+//        currentProduct?.campaignPrice.let {
+//            holder.productDiscountPrice.text = it.toString()
+//        }
+        holder.productDiscountPrice.visibility = View.GONE
         holder.itemLayout.setOnClickListener {
-            currentProduct?.let {
-                item -> productClickEvent.click(item.categoryId, "Price")
+            currentProduct?.let { item ->
+                productClickEvent.click(item.id)
             }
         }
-
     }
 
+    //productList null oldugu durumda size ı 0 alacak
     override fun getItemCount(): Int {
-        return productList.size
+        return productList?.size ?: 0
     }
 }

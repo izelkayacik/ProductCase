@@ -14,6 +14,7 @@
             android:id="@+id/actionHomeFragmentToProductFragment"
             app:destination="@id/productFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/productFragment"
         android:name="com.izelkayacik.productsapp.fragments.ProductFragment"
@@ -21,6 +22,21 @@
         tools:layout="@layout/fragment_product" >
         <argument
             android:name="categoriId"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/actionProductToProductDetail"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.izelkayacik.productsapp.fragments.ProductDetailFragment"
+        android:label="fragment_product_detail"
+        tools:layout="@layout/fragment_product_detail">
+
+        <argument
+            android:name="productId"
             app:argType="string"
             app:nullable="true" />
     </fragment>
