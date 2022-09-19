@@ -23,9 +23,6 @@ import retrofit2.Response
 
 class HomeFragment : Fragment() {
 
-    private var param1: String? = null
-    private var param2: String? = null
-
     lateinit var rvCategories: RecyclerView
     private lateinit var categoriesDetailModels: List<CategoriesDetail>
     private lateinit var categoriesItemAdapter: CategoriesItemAdapter
@@ -47,13 +44,10 @@ class HomeFragment : Fragment() {
         rvCategories = view.findViewById<RecyclerView>(R.id.rvCategoriesC)
         loadData()
 
-
         view.setOnClickListener {
             findNavController().navigate(R.id.actionHomeFragmentToProductFragment)
         }
-
         return view
-
     }
 
     private fun loadData() {
@@ -63,11 +57,8 @@ class HomeFragment : Fragment() {
                 response: Response<Categories>
             ) {
                 if (response.isSuccessful) {
-
                     response.body()?.data.let {
-
                         categoriesDetailModels = it!!
-
                         categoriesItemAdapter =
                             CategoriesItemAdapter(
                                 categoriesDetailModels!!,
@@ -85,19 +76,15 @@ class HomeFragment : Fragment() {
                         )
                         rvCategories.layoutManager = layoutManager
                         rvCategories.adapter = categoriesItemAdapter
-
                     }
                 }
             }
-
             override fun onFailure(call: Call<Categories>, t: Throwable) {
                 t.printStackTrace()
             }
         })
     }
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
     }
-
 }

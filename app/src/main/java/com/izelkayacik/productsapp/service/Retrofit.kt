@@ -20,7 +20,5 @@ public class Retrofit {
             return retro.create(ProductApi::class.java)
 
         }
-
     }
-
 }

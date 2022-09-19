@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".view.LoginScreen">
 
 
@@ -24,8 +24,8 @@
         android:id="@+id/girisYapText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hesabına Giriş Yap"
         android:fontFamily="@font/titillium_web_bold"
+        android:text="@string/hesabina_giris_yap"
         android:textColor="#52565C"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,9 +40,9 @@
         android:layout_width="251dp"
         android:layout_height="48dp"
         android:background="@drawable/login_btn_bg"
-        android:gravity="center"
-        android:hint="demo@appnomitech.com"
         android:fontFamily="@font/titillium_web_bold"
+        android:gravity="center"
+        android:hint="@string/demo"
         android:textColorHint="#52565C"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,9 +59,9 @@
         android:layout_marginStart="90dp"
         android:layout_marginEnd="70dp"
         android:background="@drawable/login_btn_bg"
-        android:gravity="center"
-        android:hint="************"
         android:fontFamily="@font/titillium_web_bold"
+        android:gravity="center"
+        android:hint="@string/psw"
         android:textColorHint="#52565C"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,11 +76,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="257dp"
         android:layout_marginEnd="53dp"
-        android:text="Şifremi Unuttum"
+        android:fontFamily="@font/titillium_web_bold"
+        android:text="@string/sifremi_unuttum"
         android:textColor="#52565C"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:fontFamily="@font/titillium_web_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -89,7 +89,7 @@
         app:layout_constraintVertical_bias="0.668" />
 
     <Button
-        android:id="@+id/girisYap"
+        android:id="@+id/btnLogIn"
         android:layout_width="208dp"
         android:layout_height="36dp"
         android:layout_marginStart="110dp"
@@ -97,8 +97,8 @@
         android:layout_marginEnd="93dp"
         android:layout_marginBottom="27dp"
         android:background="@drawable/log_in_btn_bg"
-        android:text="Giriş Yap"
         android:fontFamily="@font/titillium_web_bold"
+        android:text="@string/giris_yap"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="12sp"
@@ -113,10 +113,10 @@
         android:id="@+id/createAccText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hesabın yok mu?"
+        android:fontFamily="@font/titillium_web_bold"
+        android:text="@string/hesabin_yok_mu"
         android:textColor="#52565C"
         android:textSize="12sp"
-        android:fontFamily="@font/titillium_web_bold"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -130,8 +130,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
         android:layout_marginEnd="115dp"
-        android:text="kaydol"
         android:fontFamily="@font/titillium_web_bold"
+        android:text="@string/kaydol"
         android:textColor="#2D9CDB"
         android:textSize="12sp"
         android:textStyle="bold"
@@ -140,7 +140,6 @@
         app:layout_constraintStart_toEndOf="@+id/createAccText"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.838" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,20 +9,20 @@
 
     <SearchView
         android:id="@+id/searchView"
-        android:queryHint="Kategoriler"
-        android:iconifiedByDefault="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="2dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:layout_marginEnd="20dp" />
+        android:iconifiedByDefault="false"
+        android:queryHint="Kategoriler" />
 
     <ListView
         android:id="@+id/categorieslistView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"/>
+        android:layout_marginEnd="30dp" />
 
 </LinearLayout>

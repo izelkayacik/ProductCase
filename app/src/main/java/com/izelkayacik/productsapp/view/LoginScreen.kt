@@ -11,9 +11,9 @@ class LoginScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.log_in_screen)
 
-        val girisYap = findViewById<Button>(R.id.girisYap)
+        val girisYap = findViewById<Button>(R.id.btnLogIn)
 
-        girisYap.setOnClickListener{
+        girisYap.setOnClickListener {
 
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)

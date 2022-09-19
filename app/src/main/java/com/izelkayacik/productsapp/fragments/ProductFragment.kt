@@ -20,18 +20,14 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
 class ProductFragment : Fragment() {
-
     lateinit var rvProducts: RecyclerView
-    private  var dataModels: List<Data>? = null
+    private var dataModels: List<Data>? = null
     private lateinit var productItemAdapter: ProductItemAdapter
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         val view = inflater.inflate(R.layout.fragment_product, container, false)
         val categoriId = ProductFragmentArgs.fromBundle(requireArguments()).categoriId
 
@@ -42,19 +38,14 @@ class ProductFragment : Fragment() {
             findNavController().navigate(R.id.actionProductToProductDetail)
         }
         return view
-
     }
 
     private fun loadData(categoriId: String?, sort: String?) {
-
         Retrofit.getClient().getProduct(categoriId, sort)?.enqueue(object : Callback<Product?> {
             override fun onResponse(call: Call<Product?>, response: Response<Product?>) {
                 if (response.isSuccessful) {
-
                     response.body()?.data.let {
-
                         dataModels = it
-
                         productItemAdapter =
                             ProductItemAdapter(dataModels,
                                 MainActivity.ctx,
@@ -63,7 +54,6 @@ class ProductFragment : Fragment() {
                                         val direction =
                                             ProductFragmentDirections
                                                 .actionProductToProductDetail(id)
-
                                         findNavController().navigate(direction)
                                     }
                                 })
@@ -81,7 +71,6 @@ class ProductFragment : Fragment() {
                 t.printStackTrace()
             }
         })
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -12,9 +12,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
 class CategoriesListActivity : AppCompatActivity() {
-
     lateinit var rvCategories: RecyclerView
     private lateinit var categoriesDetailModels: Categories
     private lateinit var categoriesItemAdapter: CategoriesItemAdapter
@@ -24,14 +22,11 @@ class CategoriesListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_categories_list)
         ctx = this;
-
         rvCategories = findViewById<RecyclerView>(R.id.rvCategoriesC)
-
         loadData()
     }
 
     private fun loadData() {
-
         Retrofit.getClient().getData().enqueue(object : Callback<Categories> {
             override fun onResponse(
                 call: Call<Categories>,
@@ -49,10 +44,8 @@ class CategoriesListActivity : AppCompatActivity() {
 //                        for (categoriesDetailModel: CategoriesDetail in categoriesDetailModels!!) {
 //
 //                            println(categoriesDetailModel.categoryId)
-//
 //                        }
 //                    }
-//
 //                }
             }
 

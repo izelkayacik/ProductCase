@@ -39,21 +39,12 @@ class ProductItemAdapter(
 
         Glide.with(ctx).load(currentProduct?.images?.get(0)?.t).into(holder.productImage)
 
-//        val matrix = ColorMatrix()
-//        matrix.setSaturation(0f)
-//
-//        val filter = ColorMatrixColorFilter(matrix)
-//        holder.productImage.setColorFilter(filter)
-
         currentProduct?.title.let {
             holder.categoriesName.text = it
         }
         currentProduct?.price.let {
             holder.productPrice.text = it.toString()
         }
-//        currentProduct?.campaignPrice.let {
-//            holder.productDiscountPrice.text = it.toString()
-//        }
         holder.productDiscountPrice.visibility = View.GONE
         holder.itemLayout.setOnClickListener {
             currentProduct?.let { item ->
@@ -61,8 +52,6 @@ class ProductItemAdapter(
             }
         }
     }
-
-    //productList null oldugu durumda size ı 0 alacak
     override fun getItemCount(): Int {
         return productList?.size ?: 0
     }
