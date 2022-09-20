@@ -25,10 +25,10 @@
 
 <table>
   <tr>
-    <td> Crypto App </td>  
+    <td> Product App </td>  
   </tr>
   <tr>
-    <td valign="top"><img src=https://user-images.githubusercontent.com/36673014/191142922-e38c0644-0584-4f72-a40c-7db71b95db5a.mp4 height="500" width="250"></td>
+    <td valign="top"><img src=https://user-images.githubusercontent.com/36673014/191142922-e38c0644-0584-4f72-a40c-7db71b95db5a.gif height="500" width="250"></td>
   </tr>
  </table>
 
