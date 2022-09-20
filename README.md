@@ -25,9 +25,6 @@
 
 <table>
   <tr>
-    <td> Product App </td>  
-  </tr>
-  <tr>
     <td valign="top"><img src=https://user-images.githubusercontent.com/36673014/191143320-481fda7b-1a02-4b6a-a021-434e6e168ffc.gif height="500" width="250"></td>
   </tr>
  </table>
