@@ -13,7 +13,6 @@
 |<img src="https://user-images.githubusercontent.com/36673014/191139265-f92659e4-32a0-4263-80e1-07b9e6479dfa.png" width="250" height="500"/>|
 
 </br>
-
 </br>
 
 | Sold Out | Quantity - | Quantity + |
